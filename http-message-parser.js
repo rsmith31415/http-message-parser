@@ -107,7 +107,7 @@ function httpMessageParser(message) {
   (function() {
     var start = headerNewlineIndex;
     var end = message.length;
-    const firstBoundaryIndex = messageString.indexOf(fullBoundary);
+    const firstBoundaryIndex = fullBoundary==null?-1:messageString.indexOf(fullBoundary);
 
     if (firstBoundaryIndex > -1) {
       start = headerNewlineIndex;
